@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function diameterOfACircle(x) {
+            return 2*3.14*x;
+        }
+        function areaOfACircle(x) {
+            return 3.14*x*x;
+        }
+        let num = Number(prompt('Enter a number: '));
+        document.write(`<br/> Diameter of a circle with radius = ${num} is ${diameterOfACircle(num)}`);
+        document.write(`<br/> Area of a circle with radius = ${num} is ${areaOfACircle(num)}`);
+    </script>
+</body>
+</html>

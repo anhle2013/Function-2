@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isNumber(x) {
+            for (i=0; i<10; i++) {
+                if (x==i) {return true;}
+            }
+            return false
+        }
+        let ch = prompt('Enter a character: ');
+        if (isNumber(ch)) {alert('Character is a number');}
+        else {alert('Character is NOT a number');}
+    </script>
+</body>
+</html>

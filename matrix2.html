@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = Number(prompt('Enter size of matrix: '));
+        let matrix=[];
+        let min=10, max=90;
+
+        for (let i=0; i<n; i++) {
+            let a=[];
+            for (let j=0; j<n; j++) {
+                a[j]=Math.floor(Math.random()*(max-min+1)+min);
+            }
+            matrix[i]=a;
+        }
+        
+        var sumEven=0;
+        var sumMainDiagonal=0;
+        var sumAuxiliaryDiagonal=0;
+        var sumBorderline=0;
+        for (let i=0; i<n; i++) {
+            for (let j=0; j<n; j++) {
+                if (matrix[i][j]%2==0) {
+                    sumEven += matrix[i][j];
+                }
+                if (i==j) {
+                    sumMainDiagonal += matrix[i][j];
+                }
+                if ((i+j)==(n-1)) {
+                    sumAuxiliaryDiagonal += matrix[i][j];
+                }
+                if (i==0 ||j==0 ||i==n-1||j==n-1) {
+                    sumBorderline += matrix[i][j];
+                }
+            }
+        }
+        
+        document.write(`<br/> Total of Even numbers is: ${sumEven}`);
+        document.write(`<br/> Total in Main diagonal is: ${sumMainDiagonal}`);
+        /* Do ma trận vuông nên có thể làm:
+            for (let i=0; i<n; i++) {
+                sumMainDiagonal += matrix[i][i];
+            } */
+        document.write(`<br/> Total in Auxiliary diagonal is: ${sumAuxiliaryDiagonal}`);
+        /* i+j=n-1 ==> j=n-i-1
+            for (let i=0; i<n; i++) {
+                sumAuxiliaryDiagonal += matrix[i][n-i-1];
+            } */
+        document.write(`<br/> Total in Borderline is: ${sumBorderline}`);
+
+        document.write(`<br/><br/> Matrix size ${n}x${n} with random value from ${min} to ${max} is: <br/>`);
+        for (let i=0; i<n; i++) {
+            for (let j=0; j<n; j++) {
+                document.write(`${matrix[i][j]} &emsp;`);
+            }
+            document.write('<br/>');
+        }
+
+        document.write('<br/><br/> Lower triangular matrix is: <br/>');
+        for (let i=0; i<n; i++) {
+            for (let j=0; j<n; j++) {
+                if (i>=j) {
+                    document.write(`${matrix[i][j]} &emsp;`);
+                }
+            }
+            document.write('<br/>');
+        }
+
+        document.write('<br/><br/> Upper triangular matrix is: <br/>');
+        for (let i=0; i<n; i++) {
+            for (let k=0; k<i; k++) {
+                document.write('&emsp; &emsp;');
+            }
+            for (let j=0; j<n; j++) {
+                if (i<=j) {
+                    document.write(`${matrix[i][j]} &emsp;`);
+                }
+            }
+            document.write('<br/>');
+        }
+
+        
+    </script>
+</body>
+</html>

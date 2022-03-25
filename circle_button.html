@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Radius</p><input type="number" id="radius">
+    <input type="button" value="perimeter" onclick="perimeter()">
+    <input type="button" value="acreage" onclick="acreage()">
+    <p>Result</p>
+    <p>Perimeter is: <span id="result1"></span></p>
+    <p>Acreage is: <span id="result2"></span></p>
+</body>
+<script>
+    function perimete(x) {
+        return 2*3.14*x;
+    }
+    function acreage(x) {
+        return 3.14*x*x;
+    }
+
+    function result1() {
+        let radius= document.getElementById('radius').value;
+        document.getElementById('result1').innerHTML= perimete(radius) ;
+    }
+    function result2() {
+        let radius= document.getElementById('radius').value;
+        document.getElementById('result1').innerHTML= acreage(radius) ;
+    }
+
+    
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Product Management Software</h1>
+    <br>
+    <p>Add new product</p> 
+    <input type="text" id="_p" placeholder="New product">
+    <button type="button" onclick="addProduct()">ADD</button>
+    <br>
+    <p>Display all product</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Product name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="_tbody">
+            
+        </tbody>
+    </table>
+</body>
+<script>
+    var products =['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi', 'Iphone X' ];
+ 
+    function displayProduct() {
+        let htmls = products.map((product,index) => 
+                `<tr>
+                    <td>${index +1}</td>
+                    <td id='id_${index}'>${product}</td>
+                    <td>
+                        <button type='button' onclick="deleteProduct(${index})">Delete</button>
+                        <button type='button' onclick="editProduct(${index})">Edit</button>
+                    </td>
+                </tr>`
+        );
+       document.getElementById("_tbody").innerHTML = htmls.join("")
+    }
+
+    function addProduct() {
+        let p = document.getElementById('_p').value;
+        products.push(p);
+        clearForm();
+        displayProduct();
+    }
+
+    function clearForm() {
+        document.getElementById('_p').value = "";
+    }
+
+    function deleteProduct(idProduct) {
+        let confirmed = window.confirm("Are you sure you want to delete this product?");
+        if (confirmed) {
+            products.splice(idProduct, 1);
+            displayProduct();
+        }
+    }
+
+    function editProduct(idProduct) {
+        document.getElementById(`id_${idProduct}`).value=`<input type="text">`
+  
+        displayProduct();
+        
+    }
+
+    displayProduct(); 
+
+    
+</script>
+</html>

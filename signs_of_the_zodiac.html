@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let theZodiac = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+        function signsOfTheZodiac(star) {
+            let index = Stars.indexOf(star);
+            if (index== -1) {
+                alert(`Not found the Zodiac by star name: ${star}`);
+            } else {
+                alert(`The Zodiac of star ${Stars[index]} is  ${theZodiac[index]}`);
+            }
+        }
+
+        let name=prompt("Enter star's name: ");
+        signsOfTheZodiac(name);
+
+    </script>
+</body>
+</html>

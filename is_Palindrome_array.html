@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var string = prompt('Enter a string: ');
+        var arr= string.split;
+
+        function isPalindrome(arr) {
+            for (let i=0; i< arr.length; i++) {
+                if (arr[i]!=arr[arr.length -1 - i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        let check= isPalindrome(arr);
+        if (check==true) {alert ('Array from string '+ string + ' is a Palindrome Array');}
+        else {alert('Array from string '+ string + ' is NOT Palindrome Array');}
+
+    </script>
+</body>
+</html>
